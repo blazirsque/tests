@@ -93,6 +93,9 @@ const questions = [
     }
 ];
 
+// НАЗВАНИЕ ТЕСТА - ИЗМЕНИТЬ ДЛЯ КАЖДОГО ТЕСТА
+const TEST_NAME = "Test 2. Policies & Procedures";
+
 let currentQuestionIndex = 0;
 let totalScore = 0;
 let maxPossibleScore = 0;
@@ -459,7 +462,7 @@ function downloadResultsAsImage() {
     
     // Title
     ctx.font = 'bold 28px Arial';
-    ctx.fillText('Test 2. Policies & Procedures', canvas.width / 2, 60);
+    ctx.fillText(TEST_NAME, canvas.width / 2, 60);
     
     // Results
     ctx.font = 'bold 48px Arial';
@@ -525,7 +528,7 @@ async function sendToGoogleSheets() {
             },
             body: JSON.stringify({
                 action: 'addQuizResults',
-                sheetName: 'Test2',
+                testName: TEST_NAME,  // Добавляем название теста
                 data: rowsData
             })
         });
