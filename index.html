@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 1. Getting Started</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Name Input Form -->
+        <div id="nameForm" class="name-form">
+            <h1 class="quiz-title">Test 1. Getting Started</h1>
+            <h3>Please enter your details to begin:</h3>
+            <div class="name-inputs">
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <input type="text" id="lastName" placeholder="Last Name" required>
+            </div>
+            <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Header -->
+        <div id="quizHeader" class="quiz-header hidden">
+            <h1 class="quiz-title">Test 1. Getting Started</h1>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="question-counter" id="questionCounter">Question 1 of 5</div>
+        </div>
+
+        <!-- Quiz Content -->
+        <div id="quizContent" class="hidden">
+            <div class="question-text" id="questionText">Loading question...</div>
+            <div class="answers-container" id="answersContainer">
+                <!-- Answer options will be generated here -->
+            </div>
+            <div class="quiz-actions">
+                <button class="submit-btn" id="submitBtn" onclick="submitAnswer()">Submit Answer</button>
+                <button class="next-btn hidden" id="nextBtn" onclick="nextQuestion()">Next Question</button>
+            </div>
+            <div class="feedback" id="feedback">
+                <div class="feedback-score" id="feedbackScore"></div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="results">
+            <div class="results-header">
+                <h2>Quiz Complete!</h2>
+                <div class="final-score" id="finalScore">0/0</div>
+            </div>
+            <div class="results-details" id="resultsDetails">
+                <div class="participant-info" id="participantInfo"></div>
+                <div><strong>Date:</strong> <span id="completionDate"></span></div>
+                <div><strong>Score:</strong> <span id="scoreBreakdown"></span></div>
+                <div><strong>Percentage:</strong> <span id="percentage"></span></div>
+            </div>
+            <div class="share-buttons">
+                <button class="share-btn" onclick="downloadResultsAsImage()">📸 Save as Image</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden canvas for image generation -->
+    <canvas id="screenshotCanvas" style="display: none;"></canvas>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>
